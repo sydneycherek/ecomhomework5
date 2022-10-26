@@ -13,10 +13,27 @@
        
 <script>
      
-function rollDice() {
-     document.getElementById("placehere").innerHTML = return Math.floor(Math.random() * 6);
-   }
-for(let i = 0; i < 5; i++) console.log(rollDice());
+var dice = {
+  sides: 6,
+  roll: function () {
+    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
+
+
+
+function printNumber(number) {
+  var placeholder = document.getElementById('placeholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('button');
+
+button.onclick = function() {
+  var result = dice.roll();
+  printNumber(result);
+};
   
     </script>
 
