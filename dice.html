@@ -13,27 +13,19 @@
        
 <script>
      
-var dice = {
-  sides: 6,
-  roll: function () {
-    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-    return randomNumber;
-  }
-}
-
-
-
-function printNumber(number) {
-  var placeholder = document.getElementById('placeholder');
-  placeholder.innerHTML = number;
-}
-
-var button = document.getElementById('button');
-
-button.onclick = function() {
-  var result = dice.roll();
-  printNumber(result);
+function rolldice() {
+    var x = Math.floor(Math.random() * ((6 - 1) + 1) + 1);
+    var y = Math.floor(Math.random() * ((6 - 1) + 1) + 1);
+    var dicetotal = x + y;
+    var double = 0;
+    $('.dice1').attr('id', "dice" + x);
+    $('.dice2').attr('id', "dice" + y);
+    if (x == y) { 
+        var double = double++; 
+    }
 };
+  
+  document.getElementById("placehere").innerHTML = rolldice();
   
     </script>
 
